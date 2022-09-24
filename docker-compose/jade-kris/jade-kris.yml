@@ -10,10 +10,12 @@ services:
 			VERSION: "1.19.2"
 			TYPE: "PURPUR"
 			DIFFICULTY: "NORMAL"
+			SERVER_NAME: "Jade and Kris's Server"
 			MOTD: "§bKris §f& §dJade's §fserver!"
 			WHITELIST_FILE: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/whitelist.json"
 			OPS_FILE: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/ops.json"
 			ICON: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/server-icon.png"
+			ALLOW_FLIGHT: "TRUE"
 		tty: true
 		stdin_open: true
 		restart: unless-stopped
