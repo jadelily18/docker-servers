@@ -8,11 +8,12 @@ services:
 		environment:
 			EULA: "TRUE"
 			VERSION: "1.19.2"
-			TYPE: "PAPER"
+			TYPE: "PURPUR"
 			DIFFICULTY: "NORMAL"
 			MOTD: "§bKris §f& §dJade's §fserver!"
 			WHITELIST_FILE: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/whitelist.json"
 			OPS_FILE: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/ops.json"
+			ICON: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/server-icon.png"
 		tty: true
 		stdin_open: true
 		restart: unless-stopped
