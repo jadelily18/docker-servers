@@ -20,8 +20,8 @@ questions = [
 
 answers = inquirer.prompt(questions)
 
-server_dir_name: str = answers["serverName"]
-repo_name: str = answers["template"]
+server_dir_name = answers["serverName"]
+repo_name = answers["template"]
 
 docker_compose_url = requests.get(
     f"https://api.github.com/repos/jadelily18/docker-servers/contents/docker-compose/{repo_name}/docker-compose.yml").json()["download_url"]
