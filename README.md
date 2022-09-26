@@ -20,7 +20,7 @@ Then, run the `install_template.py` script with curl:
 curl https://raw.githubusercontent.com/jadelily18/docker-servers/main/install_template.py | python3 -
 ```
 
-Now you can move to your newly-created directory & run your server with Docker compose using Docker Compose:
+Now you can move to your newly-created directory and run your server with Docker compose using Docker Compose:
 
 ```bash
 cd [server-directory]
