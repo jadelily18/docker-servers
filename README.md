@@ -2,17 +2,17 @@
 
 This repo serves as a place for all my personal Minecraft server "templates" as docker-compose files and assets.
 
-To use any of these templates, you'll need [Docker](https://github.com/docker/docker-install) and [Python](https://www.python.org/downloads/).
+To use any of these templates, you'll need [Docker](https://github.com/docker/docker-install), [Python](https://www.python.org/downloads/), and [pip](https://pypi.org/project/pip/).
 
 ## Installation
 
-Install Python dependencies using the following bash command:
+Install Python dependencies using pip:
 
 ```bash
-pip install -r $(curl https://raw.githubusercontent.com/jadelily18/docker-servers/main/requirements.txt)
+pip install requests wget InquirerPy
 ```
 
-> You'll probably get a couple errors that I'm too lazy to fix, but they shouldn't affect anything.
+> You can also use `pip uninstall requests wget InquirerPy` after installing if you don't plan on using this on the same machine again!
 
 Then, run the `install_template.py` script with curl:
 
