@@ -2,7 +2,14 @@
 
 sudo apt -y install python3-pip
 
-pip install requests inquirer wget
+pip install pipenv
 
-curl https://raw.githubusercontent.com/jadelily18/docker-servers/main/install_template.py | python3 -
+pipenv shell
+pipenv install requests inquirer wget
+
+curl -s https://raw.githubusercontent.com/jadelily18/docker-servers/main/install_template.py -O ~/install_template.py
+python3 ~/install_template.py
+
+pipenv --rm
+deactivate
 
