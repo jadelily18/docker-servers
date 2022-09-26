@@ -14,10 +14,11 @@ pip install requests wget InquirerPy
 
 > You can also use `pip uninstall requests wget InquirerPy` after installing if you don't plan on using this on the same machine again!
 
-Then, run the `install_template.py` script with curl:
+Then, download the Python script and run it with Python 3:
 
 ```bash
-curl https://raw.githubusercontent.com/jadelily18/docker-servers/main/install_template.py | python3 -
+wget https://raw.githubusercontent.com/jadelily18/docker-servers/main/install_template.py
+python3 install_template.py
 ```
 
 Now you can move to your newly-created directory and run your server with Docker compose using Docker Compose:
