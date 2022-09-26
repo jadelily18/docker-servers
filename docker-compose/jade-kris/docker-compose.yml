@@ -4,13 +4,14 @@ services:
     jade-kris-mc:
         image: itzg/minecraft-server
         ports:
-            - 25565:25565
+            - 20069:20069
         environment:
             EULA: "TRUE"
             VERSION: "1.19.2"
-            TYPE: "PURPUR"
+            TYPE: "SPIGOT"
             DIFFICULTY: "NORMAL"
             SERVER_NAME: "Jade and Kris's Server"
+            SERVER_PORT: "20069"
             MOTD: "§bKris §f& §dJade's §fserver!"
             WHITELIST_FILE: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/whitelist.json"
             OPS_FILE: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/jade-kris/data/ops.json"
