@@ -1,6 +1,8 @@
 #!/bin/bash
 
-python3 -m pip install pipenv
+sudo apt -y install python3-pip
+
+pip install pipenv
 
 pipenv shell
 pipenv install requests inquirer wget
