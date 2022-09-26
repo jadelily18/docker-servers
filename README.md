@@ -26,3 +26,8 @@ Now you can move to your newly-created directory and run your server with Docker
 cd [server-directory]
 docker compose up
 ```
+
+<details>
+  <summary>Side Note</summary>
+  i hate managing python dependencies so, <i><b>so much.</b></i>
+</details>
