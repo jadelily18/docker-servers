@@ -1,6 +1,6 @@
 import os
 import requests
-import inquirer
+from InquirerPy import inquirer
 import wget
 
 
@@ -11,17 +11,10 @@ template_names = []
 for i in templates:
     template_names.append(i["name"])
 
-questions = [
-    inquirer.Text(
-        "serverName", "What would you like to call your server directory?", default="mc-server"),
-    inquirer.List(
-        'template', message="Select from project templates", choices=template_names)
-]
-
-answers = inquirer.prompt(questions)
-
-server_dir_name = answers["serverName"]
-repo_name = answers["template"]
+server_dir_name = inquirer.text(
+    message="What would you like to call your server directory?", default="mc-server").execute()
+repo_name = inquirer.select(
+    message="Select from project templates", choices=template_names).execute()
 
 docker_compose_url = requests.get(
     f"https://api.github.com/repos/jadelily18/docker-servers/contents/docker-compose/{repo_name}/docker-compose.yml").json()["download_url"]
