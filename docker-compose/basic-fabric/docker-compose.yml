@@ -14,6 +14,7 @@ services:
             SERVER_PORT: "20001"
             MOTD: "§fA Fabric server!"
             ICON: "https://raw.githubusercontent.com/jadelily18/docker-servers/main/docker-compose/basic-fabric/data/server-icon.png"
+            PACKWIZ_URL: "https://raw.githubusercontent.com/jadelily18/jades-server-pack/master/pack.toml"
             ALLOW_FLIGHT: "TRUE"
         tty: true
         stdin_open: true
