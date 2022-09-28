@@ -6,19 +6,18 @@ To use any of these templates, you'll need [Docker](https://github.com/docker/do
 
 ## Installation
 
-Install Python dependencies using pip:
+### Linux/OSX
+
+Download the respective file from the `build` directory. Using `cURL` for the Linux file:
 
 ```bash
-pip install requests wget InquirerPy
+curl -sL https://github.com/jadelily18/docker-servers/blob/main/build/get-template-linux\?raw\=true --output get-template-linux
 ```
 
-> You can also use `pip uninstall requests wget InquirerPy` after installing if you don't plan on using this on the same machine again!
-
-Then, download the Python script and run it with Python 3:
+Then give it executable permissions with `chmod +x` and then run it:
 
 ```bash
-wget https://raw.githubusercontent.com/jadelily18/docker-servers/main/install_template.py
-python3 install_template.py
+chmod +x get-template-linux && ./get-template-linux
 ```
 
 Now you can move to your newly-created directory and run your server with Docker compose using Docker Compose:
@@ -28,7 +27,18 @@ cd [server-directory]
 docker compose up
 ```
 
-<details>
-  <summary>Side Note</summary>
-  i hate managing python dependencies so, <i><b>so much.</b></i>
-</details>
+### Windows
+
+Download the `get-template-windows.exe` file from the `build` directory and run in in Command Prompt or Powershell:
+
+```powershell
+curl -sL https://github.com/jadelily18/docker-servers/blob/main/build/get-template-linux\?raw\=true --output get-template-windows.exe
+get-template-windows.exe
+```
+
+Now you can move to your newly-created directory and run your server with Docker compose using Docker Compose:
+
+```bash
+cd [server-directory]
+docker compose up
+```
