@@ -2,13 +2,13 @@
 
 This repo serves as a place for all my personal Minecraft server "templates" as docker-compose files and assets.
 
-To use any of these templates, you'll need [Docker](https://github.com/docker/docker-install), [Python](https://www.python.org/downloads/), and [pip](https://pypi.org/project/pip/).
+To use any of these templates, you'll need [Docker](https://github.com/docker/docker-install).
 
 ## Installation
 
 ### Linux/OSX
 
-Download the respective file from the `build` directory. Using `cURL` for the Linux file:
+Download the respective file from the `build` directory. For example, using `cURL` on the Linux executable:
 
 ```bash
 curl -sL https://github.com/jadelily18/docker-servers/blob/main/build/get-template-linux\?raw\=true --output get-template-linux
