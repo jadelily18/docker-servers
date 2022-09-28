@@ -29,7 +29,7 @@ docker compose up
 
 ### Windows
 
-Download the `get-template-windows.exe` file from the `build` directory and run in in Command Prompt or Powershell:
+Download the `get-template-windows.exe` file from the `build` directory and run it in Command Prompt or Powershell:
 
 ```powershell
 curl -sL https://github.com/jadelily18/docker-servers/blob/main/build/get-template-linux\?raw\=true --output get-template-windows.exe
