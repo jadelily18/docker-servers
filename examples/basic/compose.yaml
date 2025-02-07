@@ -1,0 +1,23 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    container_name: mc-basic-example
+    tty: true
+    stdin_open: true
+    env_file:
+      - .env.example
+    ports:
+      - 24000:25565
+    environment:
+      EULA: "TRUE"
+      MODRINTH_MODPACK: "ADRENALINE"
+      MODRINTH_PROJECTS: |
+        fabric-api
+        fabric-permissions-api
+        styled-chat
+      VERSION: "LATEST"
+      TYPE: "FABRIC"
+      MEMORY: "3G"
+    volumes:
+      - ./data:/data
+      - ./config:/config
