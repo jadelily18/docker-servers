@@ -1,13 +1,14 @@
 services:
   mc:
-    image: itzg/minecraft-server:latest
-    container_name: mc-basic-backup-example
+    image: itzg/minecraft-server
+    container_name: worlds-together
+    user: "1000"
     tty: true
     stdin_open: true
     env_file:
-      - .env.example
+      - .env
     ports:
-      - 24000:25565
+      - 25001:25565
     depends_on:
       restore-backup:
         condition: service_completed_successfully
@@ -15,12 +16,12 @@ services:
       EULA: "TRUE"
       TYPE: "MODRINTH"
       VERSION: "LATEST"
-      MODRINTH_MODPACK: "ADRENALINE"
+      MODRINTH_MODPACK: "worlds-together"
       MODRINTH_PROJECTS: |
         fabric-api
         fabric-permissions-api
         styled-chat
-      MEMORY: "3G"
+      MEMORY: "6G"
     volumes:
       - ./data:/data
       - ./config:/config
@@ -33,12 +34,12 @@ services:
     environment:
       RCON_HOST: mc
       INITIAL_DELAY: 0
-      BACKUP_INTERVAL: "6h"
+      BACKUP_INTERVAL: 6h
       TZ: "America/Chicago"
       PRUNE_BACKUPS_DAYS: 14
     volumes:
       - ./data:/data:ro
-      - /mnt/data/minecraft/backups/basic-backup:/backups
+      - /mnt/data/minecraft/backups/worlds-together:/backups
   restore-backup:
     image: itzg/mc-backup
     user: "1000"
@@ -46,4 +47,4 @@ services:
     entrypoint: restore-tar-backup
     volumes:
       - ./data:/data
-      - /mnt/data/minecraft/backups/basic-backup:/backups:ro
+      - /mnt/data/minecraft/backups/worlds-together:/backups:ro
