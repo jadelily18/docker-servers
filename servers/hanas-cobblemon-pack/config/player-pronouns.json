@@ -1,0 +1,10 @@
+{
+  "pairs": [],
+  "single": [],
+  "allow_custom": true,
+  "enable_pronoundb_sync": true,
+  "default_placeholder": "unknown pronouns",
+  "integrations": {
+    "pronoun_db": true
+  }
+}

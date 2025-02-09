@@ -1,0 +1,15 @@
+{
+  "style_name": "Default",
+  "update_tick_time": 20,
+  "list_header": [
+    "",
+    "<white>Cobblemon :3</white>  <light_gray>[%server:online%/%server:max_players%]</light_gray>",
+    ""
+  ],
+  "list_footer": [
+    "",
+    " <gray>TPS: %server:tps_colored%</gray> <dark_gray>|</dark_gray> <gray>Playtime: <yellow>%player:playtime%</yellow> ",
+    ""
+  ],
+  "hidden_in_commands": false
+}
