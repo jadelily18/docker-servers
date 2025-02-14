@@ -4,10 +4,12 @@ services:
     container_name: hanas-cobblemon-pack
     tty: true
     stdin_open: true
+    restart: unless-stopped
     env_file:
       - .env
     ports:
       - 25002:25565
+      - 26002:26002
     depends_on:
       restore-backup:
         condition: service_completed_successfully
@@ -17,6 +19,11 @@ services:
       VERSION: "LATEST"
       SEED: "467777518361797585"
       WHITELIST: "TRUE"
+      DIFFICULTY: "HARD"
+      ALLOW_FLIGHT: "TRUE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      RCON_PORT: "26002"
       # From pack file until it's uploaded to Modrinth
       MODRINTH_MODPACK: "/modpack/modpack.mrpack"
       # Athena is required for Chipped to work
@@ -34,7 +41,7 @@ services:
     volumes:
       - ./data:/data
       - ./config:/config
-      - ./Hanas Cobblemon Pack 1.6.1-1.6.0.mrpack:/modpack/modpack.mrpack
+      - ./Hanas Cobblemon Pack 1.6.1-1.6.3.mrpack:/modpack/modpack.mrpack
   backup:
     image: itzg/mc-backup
     user: "1000"

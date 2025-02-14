@@ -12,7 +12,7 @@
   "nicknameResetMessage": "Your nickname has been removed!",
   "defaultEnabledFormatting": {
     "dark_red": true,
-    "color": false,
+    "color": true,
     "underline": true,
     "yellow": true,
     "hard_gradient": false,
