@@ -1,0 +1,25 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    container_name: mc-dev-testing
+    tty: true
+    stdin_open: true
+    ports:
+      - 25010:25565
+      - 26010:26010
+    environment:
+      EULA: "TRUE"
+      TYPE: "MODRINTH"
+      VERSION: "LATEST"
+      WHITELIST: "TRUE"
+      ALLOW_FLIGHT: "TRUE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "password"
+      RCON_PORT: "26010"
+      MODRINTH_MODPACK: "adrenaline"
+      MODRINTH_PROJECTS: |
+        mod-viewer
+        spark
+      MEMORY: "2G"
+    volumes:
+      - ./data:/data
