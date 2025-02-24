@@ -24,10 +24,14 @@ services:
       ENABLE_RCON: "TRUE"
       RCON_PASSWORD: "${RCON_PASSWORD}"
       RCON_PORT: "26002"
-      # From pack file until it's uploaded to Modrinth
-      MODRINTH_MODPACK: "/modpack/modpack.mrpack"
-      # Athena is required for Chipped to work
+      RESOURCE_PACK: "https://files.jadelily.dev/RsrPNQ6dqqYvnWFS3lYm.zip"
+      RESOURCE_PACK_SHA1: "a636ac1e05f7b485c2557792067f21ea910776f9"
+      RESOURCE_PACK_ENFORCE: "TRUE"
+      # Pack might not update properly so we specify the version instead of the slug or base url
+      MODRINTH_MODPACK: "https://modrinth.com/modpack/hanas-cobblemon-pack/version/1.6.12"
+      # Athena is required for Chipped to work, and Deimos is required for EXP Counter
       MODRINTH_PROJECTS: |
+        deimos
         athena-ctm
         fabric-api
         styled-chat
@@ -37,11 +41,11 @@ services:
         banhammer
         player-pronouns
         spark
+      MODRINTH_FORCE_SYNCHRONIZE: "TRUE"
       MEMORY: "8G"
     volumes:
       - ./data:/data
       - ./config:/config
-      - ./Hanas Cobblemon Pack 1.6.1-1.6.3.mrpack:/modpack/modpack.mrpack
   backup:
     image: itzg/mc-backup
     user: "1000"
@@ -50,6 +54,7 @@ services:
         condition: service_healthy
     environment:
       RCON_HOST: mc
+      RCON_PORT: 26002
       INITIAL_DELAY: 0
       BACKUP_INTERVAL: 6h
       TZ: "America/Chicago"
