@@ -1,0 +1,36 @@
+services:
+  breeze:
+    image: ghcr.io/lilydevmc/breeze:latest
+    container_name: breeze
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - default
+      - minecraft
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      CONFIG_PATH: "/config/config.toml"
+    volumes:
+      - ./config.toml:/config/config.toml
+      - /var/run/docker.sock:/var/run/docker.sock
+  db:
+    image: mariadb:latest
+    container_name: breeze-db
+    restart: unless-stopped
+    env_file: .env
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  default:
+  minecraft:
+    external: true
+    name: minecraft
