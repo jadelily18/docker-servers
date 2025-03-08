@@ -5,7 +5,8 @@
       "permission_level": 4,
       "command_feedback": true,
       "commands": {
-        ".*": "allow"
+        ".*": "allow",
+        "worldedit.*": "allow"
       }
     }
   },

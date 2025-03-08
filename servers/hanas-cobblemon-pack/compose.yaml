@@ -24,11 +24,11 @@ services:
       ENABLE_RCON: "TRUE"
       RCON_PASSWORD: "${RCON_PASSWORD}"
       RCON_PORT: "26002"
-      RESOURCE_PACK: "https://files.jadelily.dev/RsrPNQ6dqqYvnWFS3lYm.zip"
-      RESOURCE_PACK_SHA1: "a636ac1e05f7b485c2557792067f21ea910776f9"
+      RESOURCE_PACK: "https://files.jadelily.dev/r3q5Fz5fWXMubLZqWfcO.zip"
+      RESOURCE_PACK_SHA1: "baee26b692bf2f6240288f4c0d9485eb236e7914"
       RESOURCE_PACK_ENFORCE: "TRUE"
       # Pack might not update properly so we specify the version instead of the slug or base url
-      MODRINTH_MODPACK: "https://modrinth.com/modpack/hanas-cobblemon-pack/version/1.6.12"
+      MODRINTH_MODPACK: "https://modrinth.com/modpack/hanas-cobblemon-pack/version/1.6.19"
       # Athena is required for Chipped to work, and Deimos is required for EXP Counter
       MODRINTH_PROJECTS: |
         deimos
@@ -41,6 +41,7 @@ services:
         banhammer
         player-pronouns
         spark
+        worldedit
       MODRINTH_FORCE_SYNCHRONIZE: "TRUE"
       MEMORY: "8G"
     volumes:
