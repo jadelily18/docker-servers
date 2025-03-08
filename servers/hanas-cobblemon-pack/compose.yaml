@@ -7,12 +7,17 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    networks:
+      - default
+      - minecraft
     ports:
       - 25002:25565
-      - 26002:26002
     depends_on:
       restore-backup:
         condition: service_completed_successfully
+    labels:
+      mc-router.host: "${MC_ROUTER_HOST}"
+      mc-router.network: "minecraft"
     environment:
       EULA: "TRUE"
       TYPE: "MODRINTH"
@@ -71,3 +76,9 @@ services:
     volumes:
       - ./data:/data
       - /mnt/data/minecraft/backups/hanas-cobblemon-pack:/backups:ro
+
+networks:
+  default:
+  minecraft:
+    external: true
+    name: minecraft
