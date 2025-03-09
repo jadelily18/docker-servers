@@ -33,7 +33,7 @@ services:
       RESOURCE_PACK_SHA1: "baee26b692bf2f6240288f4c0d9485eb236e7914"
       RESOURCE_PACK_ENFORCE: "TRUE"
       # Pack might not update properly so we specify the version instead of the slug or base url
-      MODRINTH_MODPACK: "https://modrinth.com/modpack/hanas-cobblemon-pack/version/1.6.19"
+      MODRINTH_MODPACK: "https://modrinth.com/modpack/hanas-cobblemon-pack/version/1.6.20"
       # Athena is required for Chipped to work, and Deimos is required for EXP Counter
       MODRINTH_PROJECTS: |
         deimos
